@@ -4,7 +4,9 @@
 
 From:
 http://yoember.com/nodejs/the-best-way-to-install-node-js/
-	 
+
+On Linux (other OS are treated in the previous link):
+
 ```bash
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash	
 
@@ -17,19 +19,19 @@ node -v
 npm install -g npm
 npm -v
 
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
 
 # Clone this repository
 
-
 ```bash
 git clone https://github.com/vertighel/ant-test.git
+
 ```
 # Install missing modules
 
-```
+```bash
 npm -f install
+
 ```
 
 # Launch the project
