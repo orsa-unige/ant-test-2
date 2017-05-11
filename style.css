@@ -1,0 +1,9 @@
+/* Overflow hidden */
+
+output{
+    border:1px solid steelblue;
+    display:block;
+    height:200px;
+    width:300px;
+    overflow:hidden;
+}

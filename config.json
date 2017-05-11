@@ -1,0 +1,9 @@
+{    
+    
+    "ws" : {
+	"ip"      : "localhost",
+	"port"    : 1234,	
+	"comment" : "Parameters for websocket connections"
+    }
+
+}
