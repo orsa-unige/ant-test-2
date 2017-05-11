@@ -10,30 +10,28 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | b
 
 nvm list
 nvm ls-remote
-nvm install 6.10.3
-nvm use 6.10.3
-nvm alias default 6.10.3
+nvm install 7.10.0
+nvm use 7.10.0
+nvm alias default 7.10.0
 node -v
 npm install -g npm
 npm -v
 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-
 ```
 
 # Clone this repository
 
-https://github.com/vertighel/ant-test.git
 
 ```bash
-mkdir ant-test
-cd ant-test
+git clone https://github.com/vertighel/ant-test.git
 ```
-# Install modules
+# Install missing modules
 
 ```
 npm -f install
 ```
+
 # Launch the project
 
  - Launch the websocket server,
