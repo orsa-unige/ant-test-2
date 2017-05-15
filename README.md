@@ -1,4 +1,4 @@
-
+This is the same example as in https://github.com/vertighel/ant-test, but uses json and appends some properties of the sender, taken from the configuration file.
 
 # Install node
 
@@ -24,7 +24,7 @@ npm -v
 # Clone this repository
 
 ```bash
-git clone https://github.com/vertighel/ant-test.git
+git clone https://github.com/vertighel/ant-test-2.git
 
 ```
 # Install missing modules
@@ -39,6 +39,6 @@ npm -f install
  - Launch the websocket server,
  - launch the webserver,
  - open the html page and send messages;
- - launch as many websoket clients you want, they will send random data as messages.
+ - launch the websoket client you want, it will send random pairs of numbers.
 
 The server will recieve messages from connected peers and it will dispatch these messages back, such as in an IM chat.
