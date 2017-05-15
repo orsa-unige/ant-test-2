@@ -1,5 +1,5 @@
 {
-  "name": "ant-test",
+  "name": "ant-test-2",
   "version": "0.0.1",
   "description": "Websocket connection tests with and without browser.",
   "main": "page.html",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vertighel/ant-test.git"
+    "url": "git+https://github.com/vertighel/ant-test-2.git"
   },
   "keywords": [
     "ws",
@@ -23,7 +23,7 @@
   "author": "Davide Ricci",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vertighel/ant-test/issues"
+    "url": "https://github.com/vertighel/ant-test-2/issues"
   },
-  "homepage": "https://github.com/vertighel/ant-test#readme"
+  "homepage": "https://github.com/vertighel/ant-test-2#readme"
 }

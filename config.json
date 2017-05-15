@@ -1,9 +1,64 @@
 {    
     
-    "ws" : {
-	"ip"      : "localhost",
-	"port"    : 1234,	
-	"comment" : "Parameters for websocket connections"
+    "actor" :
+    {
+	"list"             : ["websocket_server", "telescope_observer", "dummy_1", "dummy_2"],
+	"prop"             : [
+	    {
+   		"name"         : "websocket_server",
+		"ip"           : "localhost",
+		"port"         : 1234,
+		"title"        : "Websocket server",
+		"description"  : "Recieves the messages and dispatch them to the other actors."
+	    },
+	    
+	    {
+		"name"         : "telescope_observer",
+		"ip"           : null,
+		"webpage"      : "./page.html",
+		"title"        : "Telescope observer",
+		"description"  : "Connects to the Websocket server using a browser."
+	    },		     
+	    
+	    {
+		"name"         : "external_observer",
+		"ip"           : null,
+		"webpage"      : "./page.2.html",
+		"title"        : "External observer",
+		"description"  : "Cannot send messages. "
+	    },		     
+
+	    {	     
+		"name"         : "dummy_1",
+		"ip"           : "localhost",
+		"title"        : "Dummy actor n°1",
+		"description"  : "It simulates an actor."
+	    },		     
+	    
+	    {	     
+		"name"         : "dummy_2",
+		"ip"           : "localhost",
+		"title"        : "Dummy actor n°2",
+		"description"  : "It simulates an actor."
+	    }
+	],
+	"title"       : "Actors of the observatory",
+	"description" : "It contains a list of all actors exchanging messages."
+
+    },
+        
+    "fits" : {
+	"dir"              : "./mnt/fits/",
+	"title"            : "FITS parameters",
+	"description"      : "Where FITS files are stored."	
+    },
+
+    "png" : {
+	"dir"     : "./mnt/png/",
+	"cuts"    : [11000,40000],
+	"title"   : "PNG images parameters",
+	"description" : "dir: png file directory; cuts: 0=min,65535=max, [11000,40000] for 25s exposure; ]"
     }
 
+    
 }

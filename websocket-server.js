@@ -8,7 +8,16 @@ const wsserver = require('websocket').server;         /// websocket module (npm 
 /// 1) Create http server and listening.
 /// This is not a web server, it is just because we use *WEB*Sockets. 
 var httpserver = http.createServer(function(request, response) {});
-var port = config.ws.port            /// Listening on this port from the configuration file.
+
+
+/// This javascript manages the actor "telescope observer".
+var whoami="websocket_server";
+
+/// So let's find all its properties in the configuration file,
+/// and append it in the raw form data.
+var wss=config.actor.prop.find(function(o){return o.name==whoami});
+
+var port = wss.port       /// Listening on this port from the configuration file.
 httpserver.listen(port, function(){                 /// SET SAME PORT ON CLIENT SIDE!
     console.log(utc() + ' --- Server is listening on port '+port);
 });
@@ -24,15 +33,20 @@ ws.on('request', function(r){                   /// Listen connections
     var id = count++;                           /// Specific id for this client & increment count
     clients[id] = connection;                   /// Store the connection method so we can loop through & contact all clients
     console.log(utc() + ' → Peer ' + connection.remoteAddress + ' connected. Connection id: '+id);    
-    console.log(utc() + ' → Peer ' + connection.remoteAddress + ' connected. Connection id: '+id);    
     
     /// 3a) Listen for incoming messages and broadcast
     connection.on('message', function(message){ /// Create event listener
-	var msgString = message.utf8Data;       /// The string message that was sent to us		
-	console.log(' Peer ' + id + " sent me this: " + msgString);
+	
+	var msgstring = message.utf8Data; /// The string message that was sent to us.
+	console.log(' Peer ' + id + " sent me this: " + msgstring);
+
+	var msgobject = JSON.parse(msgstring, null, 2)
+
+	/// [...] here we manipulate msgobject which is a js object
+	
 	for(var i in clients)
-	    /// Send a message to the client with the message
-            clients[i].sendUTF('I am the server. Client n°' + id +' said: ' + msgString);     
+	    /// Send a message to all the connected clients
+	    clients[i].send(JSON.stringify(msgobject));
     });
     
     /// 3b) Listen for client disconnection
