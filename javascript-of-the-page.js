@@ -14,6 +14,19 @@ var config = (function() {
     return cfg;
 })();
 
+
+/// Filling the example form with the parameters taken in the config file.
+/// Look: there's nothing in the html tags!
+$.each(config.form.example, function(name, val){
+    $('[name="'+name+'"]')  /// Seleziono quello con l'attributo name uguale (num1)
+    	.prop(val.prop)     /// Ci aggiungo le proprietà (in questo caso valore di default)
+    	.attr(val.attr)     /// E gli attributi min, max, eccetera
+     	.parent("label")    /// Seleziono l'elemento parente, che è la  label
+    	.prepend(val.label)     /// Ci aggiungo il testo
+     	.attr("title",val.title)  /// E l'attributo titolo. 
+});
+
+
 /// Retrives form data
 $("form").on("submit",function(event){ /// When the Send button is pressed...
     event.preventDefault();       /// Avoids the page to reload on click.

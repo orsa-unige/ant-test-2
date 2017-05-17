@@ -4,7 +4,9 @@
   "description": "Websocket connection tests with and without browser.",
   "main": "page.html",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
+    "prompt": "^1.0.0",
     "websocket": "^1.0.24"
   },
   "devDependencies": {},
