@@ -4,9 +4,10 @@
     {
 	"list"             : ["websocket_server", "telescope_observer", "dummy_1", "dummy_2"],
 	"prop"             : [
+
 	    {
    		"name"         : "websocket_server",
-		"ip"           : "snoopy.local",
+		"ip"           : "localhost",
 		"port"         : 1234,
 		"title"        : "Websocket server",
 		"description"  : "Recieves the messages and dispatch them to the other actors."
@@ -18,7 +19,7 @@
 		"title"        : "Telescope observer",
 		"description"  : "Connects to the Websocket server using a browser."
 	    },		     
-	    
+	    	    
 	    {
 		"name"         : "external_observer",
 		"webpage"      : "./page.2.html",
@@ -62,7 +63,7 @@
 	"etc" : {
 	    "temp": { "prop": { "type":"number", "value":5000 }, "label": "Temperature [K]", "attr": {"min":1000, "max":15000,"step":1000} },
 	    "powr": { "prop": { "type":"number", "value":1    }, "label": "Index",           "attr": {"min":1,    "max":4,    "step":1   } },
-	    "usrf": { "prop": { "type":"file",   "value":null }, "label": "User defined",    "attr": {}                              },
+	    "usrf": { "prop": { "type":"file",   "value":"asd" }, "label": "User defined",    "attr": {}                              },
 	    "m":    { "prop": { "value":10  },                   "label": "Magnitude",       "attr": {"min":-14,  "max":30,   "step":0.1}  },
 	    "z":    { "prop": { "value":0   },        "label": "Redshift",        "attr": {"min":0,    "max":12,   "step":0.01} },
 	    "airmass": { "prop":{ "value":0   },      "label": "Airmass",         "attr": {"min":0,    "max":5,    "step":0.1}  },
